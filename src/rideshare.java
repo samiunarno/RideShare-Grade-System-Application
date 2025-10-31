@@ -26,17 +26,15 @@ public class rideshare {
         }
     }
 
-    public void print_pricing(){
+    
+
+    public static void main(String[] args) {
+        System.out.println("Rideshare fare calculator");
         System.out.println("\n Taxi Pricing Rules : ");
         System.out.println("Day Time (7:00 AM to 11:00 PM)");
         System.out.println("Night Time (11:00 PM to 7:00 AM)");
         System.out.println("Night Time (11:00 PM to 7:00 AM)");
         System.out.println("First " + per_km_rate + " KM: RMB " + Night_base);
-
-
-    }
-
-    public static void main(String[] args) {
-        System.out.println("Rideshare fare calculator");
+        System.out.println("Additional KM : RMB " + night_rate_km + "/km");
     }
 }
