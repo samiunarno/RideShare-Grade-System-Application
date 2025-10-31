@@ -29,7 +29,10 @@ public class rideapp {
             double fare = rideshare.calculateFare(distance, hour);
             System.out.println("Estimated Fare: RMB " + fare);
 
-            System.out.println("\n Trip Summury :");
+            System.out.println("\n Trip Summary :");
+            System.out.println("Distance: " + distance + " km");
+            System.out.println("Hour: " + hour + ":00 (" + (hour < 12 ? "AM" : "PM") + ")");
+            System.out.println("Estimated Fare: RMB " + fare);
         }
 
     }
