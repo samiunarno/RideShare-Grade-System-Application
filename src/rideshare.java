@@ -31,11 +31,62 @@ public class rideshare {
         System.out.println("Amount: RMB " + String.format("%.2f", amount));
         System.out.println("Payment Method: " + paymentMethod);
 
-        switch (paymentMethod) {
-            
+        switch (paymentMethod.toLowerCase()) {
+            case "cash": {
+                processCashPayment(amount);
+                break;
+            }
+            case "card": {
+                processCardPayment(amount);
+                break;
+            }
+            case "wechat": {
+                processWechatPayment(amount);
+                break;
+            }
+            case "alipay": {
+                processAlipayPayment(amount);
+                break;
+            }
+            case "Membership": {
+                processMembershipPayment(amount);
+                break;
+            }
+            default: {
+                System.out.println("Unsupported payment method. Please use 'cash' or 'card'.");
+                break;
+            }
+        }
     }
 
-    
+    private void processCashPayment(double amount) {
+        // handle cash payment (e.g., record, print receipt)
+        System.out.println("Collected cash payment: RMB " + String.format("%.2f", amount));
+    }
+
+    private void processCardPayment(double amount) {
+        // placeholder for card processing logic
+        System.out.println("Processing card payment for RMB " + String.format("%.2f", amount));
+        System.out.println("Card charged successfully.");
+    }
+
+    private void processWechatPayment(double amount) {
+        // placeholder for WeChat payment processing logic
+        System.out.println("Processing WeChat payment for RMB " + String.format("%.2f", amount));
+        System.out.println("WeChat payment successful.");
+    }
+
+    private void processAlipayPayment(double amount) {
+        // placeholder for Alipay payment processing logic
+        System.out.println("Processing Alipay payment for RMB " + String.format("%.2f", amount));
+        System.out.println("Alipay payment successful.");
+    }
+
+    private void processMembershipPayment(double amount) {
+        // handle membership payment (e.g., apply discount, deduct balance)
+        System.out.println("Processing membership payment for RMB " + String.format("%.2f", amount));
+        System.out.println("Membership payment processed.");
+    }
 
     public static void main(String[] args) {
         System.out.println("Rideshare fare calculator");
