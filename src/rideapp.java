@@ -30,11 +30,8 @@ public class rideapp {
 
             System.out.println("\n Trip Summary :");
             System.out.println("Distance: " + distance + " km");
-
             System.out.println("Hour: " + hour + ":00 (" + (rs.isDayTime(hour) ? "Day Time" : "Night Time " + (hour < 12 ? "AM" : "PM")) + ")");
-
             System.out.println("Total Fare : RMB" + String.format("%.2f", fare));
-
             System.out.print("\n Calculate Another Trip? (yes/no) : ");
             String choice = scanner.next();
 
