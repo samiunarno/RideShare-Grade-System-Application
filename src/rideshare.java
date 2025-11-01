@@ -88,7 +88,25 @@ public class rideshare {
         System.out.println("Membership payment processed.");
     }
 
+    private void printReciept(double distance, int hour, double fare, String paymentMethod){
+        System.out.println("----- Trip Receipt -----");
+        System.out.println("Distance: " + distance + " KM");
+        System.out.println("Time: " + (isDayTime(hour) ? "Day" : "Night"));
+        System.out.println("Fare: RMB " + String.format("%.2f", fare));
+        System.out.println("Payment Method: " + paymentMethod);
+        System.out.println("Transaction Successful!");
+        System.out.println("Thank you for riding with us!");
+        System.out.println("-------------------------");
+    }
+
     public static void main(String[] args) {
+
+        rideshare calc = new rideshare();
+
+        System.out.println("Testing Rideshare with Payment");
+        double fare = calc.calculateFare(8.0, 14);
+
+        System.out.printf("Fare :  RMB %.2f%n", fare);
         System.out.println("Rideshare fare calculator");
         System.out.println("\n Taxi Pricing Rules : ");
         System.out.println("Day Time (7:00 AM to 11:00 PM)");
