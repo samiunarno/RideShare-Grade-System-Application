@@ -60,4 +60,8 @@ public class rideapp {
         System.out.println("Time: " + timeType);
         System.out.printf("Estimated Fare: $%.2f%n", fare);
     }
+
+    private static void processPayment(rideshare rs , double fare){
+        
+    }
 }
