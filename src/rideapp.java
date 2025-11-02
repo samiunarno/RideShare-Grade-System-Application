@@ -20,6 +20,11 @@ public class rideapp {
                 continue;
             }
             double fare = rs.calculateFare(distance, hour);
+            if (distance > 20) {
+                double extra = fare * 0.10;
+                fare += extra;
+                System.out.printf("High mileage surcharge applied (10%%): +$%.2f%n", extra);
+}
             String timeType = rs.isDayTime(hour) ? "Day Time" : "Night Time";
             showTripSummary(distance, hour, timeType, fare);
             processPayment(rs, scanner, fare);
@@ -105,13 +110,24 @@ public class rideapp {
             case 5:
                 paymentMethod = "Membership";
                 break;
+            case 6 :
+            paymentMethod = "aborted";
+            System.out.println("Payment Aborted Your Ride is Cancelled");
+            break;    
+
             default:
                 System.out.println("Invalid choice. Please select a valid payment method.");
                 return;
         }
-
-        rs.processPayment(fare, paymentMethod);
+        if (paymentMethod.equalsIgnoreCase("membership")) {
+        double discount = fare * 0.05;
+        fare -= discount;
+        System.out.printf("Membership discount applied: -$%.2f%n", discount);
+        System.out.printf("Discounted Fare: $%.2f%n", fare);
     }
+
+    rs.processPayment(fare, paymentMethod);
+}
 
     private static int getPaymentChoice(Scanner scanner){
         System.out.print("Enter Your Choice (1-5) :");
@@ -129,9 +145,18 @@ public class rideapp {
         }
     }
 
-    private static boolean askToContinue(Scanner scanner){
-        System.out.println("\n Do you want to Book another Trip (yes/no) ?");
-        String response = scanner.next().toLowerCase();
-        return response.equals("yes") || response.equals("y");
+   private static boolean askToContinue(Scanner scanner) {
+    System.out.println("\nDo you want to book another trip (yes/no)? ");
+    String response = scanner.next().toLowerCase();
+
+    if (response.equals("yes") || response.equals("y")) {
+        return false; 
+    } else if (response.equals("no") || response.equals("n")) {
+        return true; 
+    } else {
+        System.out.println("Invalid input, exiting...");
+        return true; 
     }
+}
+
 }
