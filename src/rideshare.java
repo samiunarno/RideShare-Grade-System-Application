@@ -48,7 +48,7 @@ public class rideshare {
                 processAlipayPayment(amount);
                 break;
             }
-            case "Membership": {
+            case "membership": {
                 processMembershipPayment(amount);
                 break;
             }
