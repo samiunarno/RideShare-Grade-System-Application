@@ -31,7 +31,7 @@ public class rideapp {
         System.out.println("Thank you for Using Ride Share App!");
 
         }
-            
+    }
 
     private static void showWelcomeMessage() {
         System.out.println("Tip: enter distance in kilometers and hour in 24-hour format (0-23).");
@@ -78,7 +78,60 @@ public class rideapp {
     }
 
     private static void processPayment(rideshare rs ,Scanner scanner, double fare){
-        System.out.println();
+        System.out.println("\n Select Payment Method: ");
+        System.out.println("1. Cash");
+        System.out.println("2. Card");
+        System.out.println("3. WeChat");
+        System.out.println("4. Alipay");
+        System.out.println("5. Membership");
 
+        int choice = scanner.nextInt();
+        String paymentMethod = "";
+
+        switch (choice) {
+            case 1:
+                paymentMethod = "cash";
+                break;
+                
+            case 2:
+                paymentMethod = "card";
+                break;
+            case 3:
+                paymentMethod = "wechat";
+                break;
+            case 4:
+                paymentMethod = "alipay";
+                break;
+            case 5:
+                paymentMethod = "Membership";
+                break;
+            default:
+                System.out.println("Invalid choice. Please select a valid payment method.");
+                return;
+        }
+
+        rs.processPayment(fare, paymentMethod);
+    }
+
+    private static int getPaymentChoice(Scanner scanner){
+        System.out.print("Enter Your Choice (1-5) :");
+        try {
+            int choice = scanner.nextInt();
+            if(choice < 1 || choice > 5){
+                System.out.println("Invalid choice. Please select a valid payment method.");
+                return 1;
+            }
+            return choice;
+        } catch (Exception e) {
+            System.out.println("Error Invalid Number Using Cash Payment");
+            scanner.next(); // Clear the invalid input
+            return 1;
+        }
+    }
+
+    private static boolean askToContinue(Scanner scanner){
+        System.out.println("\n Do you want to Book another Trip (yes/no) ?");
+        String response = scanner.next().toLowerCase();
+        return response.equals("yes") || response.equals("y");
     }
 }
