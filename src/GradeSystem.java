@@ -257,5 +257,39 @@ public class GradeSystem {
     System.out.println("Grade Added: " + grade + " (" + letterGrade + ") for " + selectedStudent.getName() + " in " + subjectName); // Fixed: subjectName variable
 }
 
+public void start () {
+    System.out.println("=== Grade System Application ===");
+    System.out.println("Letter grade Conversion is Active ");
+
+    while (true) {
+        User loggedInUser = login();
+        if(loggedInUser == null ) {
+            continue;
+        }
+        if(loggedInUser.getRole().equals("student")){
+            if(!students.isEmpty()){
+                studentMenu(students.get(0));
+            }
+            else if (loggedInUser.getRole().equals("teacher")){
+                if(!teachers.isEmpty()){
+                    teacherMenu(teachers.get(0));
+                }
+            }
+            System.out.println("You want to close the Application ? ");
+            String exit = scanner.nextLine();
+            if(exit.equalsIgnoreCase("yes") || exit.equalsIgnoreCase("y")){
+                break;
+            }
+        }
+        scanner.close();
+        System.out.println("Thanks For Using Grade System Application....GoodBye");
+    }
+
+}
+public static void main (String[] args){
+    GradeSystem system = new GradeSystem();
+    system.start();
+}
+
     
 }
