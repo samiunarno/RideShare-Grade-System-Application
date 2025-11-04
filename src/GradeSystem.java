@@ -20,30 +20,30 @@ public class GradeSystem {
 
         Student s1 = new Student("S001", "Bushita");
         s1.addGrade("Advance Mathmatics", 90.0);
-        s1.addGrade("Introduction to Computer", 90.0);
-        s1.addGrade("Object Oriented Programming Language", 90.0);
-        s1.addGrade("Introduction to Chineese", 90.0);
+        s1.addGrade("Introduction to Computer", 98.0);
+        s1.addGrade("Object Oriented Programming Language", 80.0);
+        s1.addGrade("Introduction to Chineese", 96.0);
         students.add(s1);
 
         Student s2 = new Student("S002", "Mika");
         s2.addGrade("Advance Mathmatics", 90.0); 
-        s2.addGrade("Introduction to Computer", 90.0);
-        s2.addGrade("Object Oriented Programming Language", 90.0);
-        s2.addGrade("Introduction to Chineese", 90.0);
+        s2.addGrade("Introduction to Computer", 70.0);
+        s2.addGrade("Object Oriented Programming Language", 60.0);
+        s2.addGrade("Introduction to Chineese", 80.0);
         students.add(s2);
 
         Student s3 = new Student("S003", "Onot");
-        s3.addGrade("Advance Mathmatics", 90.0); 
-        s3.addGrade("Introduction to Computer", 90.0);
-        s3.addGrade("Object Oriented Programming Language", 90.0);
+        s3.addGrade("Advance Mathmatics", 98.0); 
+        s3.addGrade("Introduction to Computer", 80.0);
+        s3.addGrade("Object Oriented Programming Language", 70.0);
         s3.addGrade("Introduction to Chineese", 90.0);
         students.add(s3);
 
         Student s4 = new Student("S004", "Emma");
-        s4.addGrade("Advance Mathmatics", 90.0); 
-        s4.addGrade("Introduction to Computer", 90.0);
-        s4.addGrade("Object Oriented Programming Language", 90.0);
-        s4.addGrade("Introduction to Chineese", 90.0);
+        s4.addGrade("Advance Mathmatics", 80.0); 
+        s4.addGrade("Introduction to Computer", 70.0);
+        s4.addGrade("Object Oriented Programming Language", 60.0);
+        s4.addGrade("Introduction to Chineese", 50.0);
         students.add(s4);
 
         Teacher t1 = new Teacher("T001", "Wu Xiulan");
