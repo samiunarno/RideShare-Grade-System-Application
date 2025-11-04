@@ -90,6 +90,42 @@ public class GradeSystem {
         System.out.println("45.5 -->" + convertToLetterGrade(45.5) + "");
     }
 
+    private void gradeConversionChecker(){
+        System.out.println("\n Grade Conversion Checker :");
+        System.out.print("====================================");
+        while (true) {
+            System.out.print("\n Enter a Grade to Convert (0-100) or -1 to exit :");
+            try{
+                double grade = scanner.nextDouble();
+                scanner.nextLine();
+                if(grade == -1){
+                    break;
+                }
+                String letterGrade = convertToLetterGrade(grade);
+                System.out.printf("%.1f -> %s%n", grade,letterGrade);
+            }catch(Exception e){
+                System.out.println("Please Enter a Valid Number");
+                scanner.nextLine();
+            }
+            
+        }
+    }
+    private void showGradeConversionRules(){
+        System.out.println("\n Grade Conversion Rules :");
+        System.out.println("===============================");
+        System.out.println("70-100 : A");
+        System.out.println("60-69 : B");
+        System.out.println("50-59 : C");
+        System.out.println("0-49 : F");
+        System.out.println("Other -> Input Please Error !");
+
+        System.out.print("\n Examples :");
+        double[] example = { 95.0,85.0,67.5,55.0,42.0,30.0,105.0,-5.0};
+        for (double Examples : example){
+            System.out.printf("%.1f -> %s%n", example, convertToLetterGrade(Examples));
+        }
+    }
+
     
     
 }
