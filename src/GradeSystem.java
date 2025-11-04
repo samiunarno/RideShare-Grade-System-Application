@@ -64,6 +64,32 @@ public class GradeSystem {
         teachers.add(t4);
     }
 
+    private String convertToLetterGrade(double grade){
+        if(grade>= 70 && grade <=100){
+            return "A";
+        }
+        else if (grade >60 && grade < 69){
+            return "B";
+        }
+        else if (grade >=50 && grade <= 59 ){
+            return "C";
+        }
+        else if (grade >=0 && grade <=40){
+            return "F";
+        }
+        else {
+            return "Invalid Grade";
+        }
+    }
+    private void displayGradeWithLetters(Student student){
+        System.out.println("\n Grades For " + student.getName() + "(" + student.getStudentId() + ") :");
+        System.out.println("Grade Conversion Example : ");
+        System.out.println("85.5 -->" + convertToLetterGrade(85.5)+ "");
+        System.out.println("65.0 -->" + convertToLetterGrade(65.0) + "");
+        System.out.println("55.0 -->" + convertToLetterGrade(55.5) + "");
+        System.out.println("45.5 -->" + convertToLetterGrade(45.5) + "");
+    }
+
     
     
 }
