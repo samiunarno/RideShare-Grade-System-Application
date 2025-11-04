@@ -225,8 +225,32 @@ public class GradeSystem {
     }
 
     private void addGradeMenu(Teacher teacher){
-        // Placeholder implementation to avoid unresolved symbol at compile time.
-        System.out.println("\n Add Grade Menu (not implemented)");
+        System.out.println("\n ADD GRADE");
+        if(students.isEmpty()){
+            System.out.println("No Students Available");
+            return;
+        }
+        System.out.println("Available Students : ");
+        for(int i =0; i<students.size();i++){
+            System.out.println((i+1) + "."+ students.get(i).getName());
+        }
+        System.out.println("Select Student By Number : ");
+        int studentChoice = scanner.nextLine();
+        scanner.nextLine();
+        if(studentChoice <1 || studentChoice > students.size()){
+            System.out.println("Invalid Student Selection!");
+            return;
+        }
+        Student selectedStudent = students.get(studentChoice - 1);
+        System.out.println("Enter Subject name :");
+        String subjectName = scanner.nextLine();
+        System.out.println("Enter Grade :");
+        double grade = scanner.nextDouble();
+        scanner.nextLine();
+
+        String lettergrade = convertToLetterGrade(grade);
+        System.out.println("Grade Preview : " + grade + "->" + lettergrade );
+        System.out.println("Grade Added : " + grade + "(" + lettergrade + ") for" + selectedStudent.getName() + "in" + subject);
     }
 
     
