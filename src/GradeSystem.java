@@ -125,6 +125,13 @@ public class GradeSystem {
             System.out.printf("%.1f -> %s%n", example, convertToLetterGrade(Examples));
         }
     }
+    public User login () {
+        System.out.println("=== Welcome to the Grade System ===");
+        System.out.println("Username :");
+        String username = scanner.nextLine();
+        System.out.println("Password");
+        String password = scanner.nextLine();
+    }
 
     
     
