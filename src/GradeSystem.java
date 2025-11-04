@@ -224,34 +224,38 @@ public class GradeSystem {
         }
     }
 
-    private void addGradeMenu(Teacher teacher){
-        System.out.println("\n ADD GRADE");
-        if(students.isEmpty()){
-            System.out.println("No Students Available");
-            return;
-        }
-        System.out.println("Available Students : ");
-        for(int i =0; i<students.size();i++){
-            System.out.println((i+1) + "."+ students.get(i).getName());
-        }
-        System.out.println("Select Student By Number : ");
-        int studentChoice = scanner.nextLine();
-        scanner.nextLine();
-        if(studentChoice <1 || studentChoice > students.size()){
-            System.out.println("Invalid Student Selection!");
-            return;
-        }
-        Student selectedStudent = students.get(studentChoice - 1);
-        System.out.println("Enter Subject name :");
-        String subjectName = scanner.nextLine();
-        System.out.println("Enter Grade :");
-        double grade = scanner.nextDouble();
-        scanner.nextLine();
-
-        String lettergrade = convertToLetterGrade(grade);
-        System.out.println("Grade Preview : " + grade + "->" + lettergrade );
-        System.out.println("Grade Added : " + grade + "(" + lettergrade + ") for" + selectedStudent.getName() + "in" + subject);
+    private void addGradeMenu(Teacher teacher) {
+    System.out.println("\nADD GRADE");
+    if (students.isEmpty()) {
+        System.out.println("No Students Available");
+        return;
     }
+    
+    System.out.println("Available Students:");
+    for (int i = 0; i < students.size(); i++) {
+        System.out.println((i + 1) + ". " + students.get(i).getName());
+    }
+    
+    System.out.println("Select Student By Number: ");
+    int studentChoice = scanner.nextInt();  
+    scanner.nextLine(); 
+    
+    if (studentChoice < 1 || studentChoice > students.size()) {
+        System.out.println("Invalid Student Selection!");
+        return;
+    }
+    
+    Student selectedStudent = students.get(studentChoice - 1);
+    System.out.println("Enter Subject name: ");
+    String subjectName = scanner.nextLine();
+    System.out.println("Enter Grade: ");
+    double grade = scanner.nextDouble();
+    scanner.nextLine(); 
+
+    String letterGrade = convertToLetterGrade(grade);
+    System.out.println("Grade Preview: " + grade + " -> " + letterGrade);
+    System.out.println("Grade Added: " + grade + " (" + letterGrade + ") for " + selectedStudent.getName() + " in " + subjectName); // Fixed: subjectName variable
+}
 
     
 }
