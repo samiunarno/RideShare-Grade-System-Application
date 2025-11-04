@@ -193,19 +193,41 @@ public class GradeSystem {
 
         switch (choice) {
             case 1:
-            if(!students.isEmpty()){
-                students.get(0).ViewGrades();
-                System.out.println("\n Letter Grade Reference :");
+                if(!students.isEmpty()){
+                    for (Student s : students) {
+                        s.ViewGrades();
+                    }
+                    System.out.println("\n Letter Grade Reference :");
+                    showGradeConversionRules();
+                }
+                break;
+
+            case 2:
+                addGradeMenu(teacher);
+                break;
+
+            case 3:
                 showGradeConversionRules();
-            }
-                
                 break;
-        
+
+            case 4:
+                gradeConversionChecker();
+                break;
+
+            case 5 :
+                System.out.println("Logging Out");
+                break;
+
             default:
-                break;
+                System.out.println("Invalid Choice Please Try Again");
+                
         }
     }
 
-    
+    private void addGradeMenu(Teacher teacher){
+        // Placeholder implementation to avoid unresolved symbol at compile time.
+        System.out.println("\n Add Grade Menu (not implemented)");
+    }
+
     
 }
