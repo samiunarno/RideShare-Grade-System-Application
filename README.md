@@ -173,6 +173,16 @@ The **Grade System** is a console-based Java project that allows **students** an
 
 </div>
 
+
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/samiunarno/RideShare-Grade-System-Application-simple.git
+   cd src
+   javac rideapp.java rideshare.java GradeSystem.java Student.java Teacher.java User.java
+   java rideapp
+   java GradeSystem
+
 <div align="left">
 
 ```bash
@@ -187,16 +197,6 @@ The **Grade System** is a console-based Java project that allows **students** an
   ┣ 📜 Student.java        # Student data & grade operations
   ┣ 📜 Teacher.java        # Teacher actions (grading/management)
   ┗ 📜 README.md
-
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/samiunarno/RideShare-Grade-System-Application-simple.git
-   cd src
-   javac rideapp.java rideshare.java GradeSystem.java Student.java Teacher.java User.java
-   java rideapp
-   java GradeSystem
-
 
 
 
