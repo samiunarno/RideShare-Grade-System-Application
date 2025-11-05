@@ -169,7 +169,7 @@ The **Grade System** is a console-based Java project that allows **students** an
 
 <div align="center">
 
-## 🗂️ Project File Structure
+
 
 </div>
 
@@ -185,6 +185,8 @@ The **Grade System** is a console-based Java project that allows **students** an
 
 <div align="left">
 
+
+## 🗂️ Project File Structure
 ```bash
 📦 src
 ┣ 🚗 Ride Share App
